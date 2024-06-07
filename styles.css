@@ -1,0 +1,413 @@
+/* Import the Space Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --light-cyan: hsl(170, 57%, 77%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --error-cyan: hsl(14, 57%, 55%);;
+    --white: hsl(0, 0%, 100%);
+    --font-size-base: 1rem;
+    --font-family: "Space Mono", monospace;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-grayish-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    margin: 0;
+    font-size: var(--font-size-base);
+}
+
+.container {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    color: var(--dark-grayish-cyan);
+    font-size: 1.5rem;
+    margin: 4rem;
+    letter-spacing: 1rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    height: fit-content;
+    width: auto;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.input-section, .output-section {
+    padding: 1.5rem 2rem 1.5rem 1rem;
+}
+
+.input-section {
+    width: 20rem;
+    /* width: 30vw; */
+}
+
+.input-section-bill, .input-section-tip, .input-section-people {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.input-section-bill > label, .input-section-tip > label, .input-section-people > label {
+    margin-bottom: 0.3rem;
+}
+
+.input-section label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-grayish-cyan);
+    /* margin-bottom: 0.5rem; */
+}
+
+.input-wrapper {
+    position: relative;
+    background-color: var(--very-light-grayish-cyan);
+    width: fit-content;
+    border-radius: 0.5rem;
+
+}
+
+.input-wrapper-bill {
+    margin-bottom: 2rem;
+
+}
+
+.input-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    /* width: 1.5rem; */
+    /* height: 1.5rem; */
+}
+
+.input-wrapper-bill > input, .input-wrapper-people > input {
+    /* width: 100%; */
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    background-color: var(--very-light-grayish-cyan);
+    text-align: right;
+    width: auto;
+    border: 1px solid transparent;
+    font-family: var(--font-family);
+    caret-color: var(--strong-cyan);
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+
+}
+
+/* .input-section input:first-child {
+    margin-bottom: 2rem;
+} */
+
+
+
+
+.input-section input.error {
+    border: 2px solid var(--error-cyan);
+}
+
+.input-section input.error:focus {
+    border: 2px solid var(--error-cyan);
+}
+.input-wrapper-bill > input:focus, .input-wrapper-people > input:focus, .custom-input:focus {
+    outline: none;
+    border: 1px solid var(--strong-cyan);
+}
+
+
+
+.error-message {
+    display: none;
+    color: var(--error-cyan);
+    font-size: 0.8rem;
+    /* margin-top: -1rem;
+    margin-bottom: 1rem; */
+    /* margin-left: 5rem; */
+
+}
+
+
+.input-section-people-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+
+}
+
+.tip-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    border: 2px solid transparent;
+}
+/* .input-section-tip {
+    width: 100%;
+} */
+
+ .tip-btn, .custom-input {
+    flex: 1 1 30%;
+    /* padding: 1rem; */
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* margin: 0;  */
+}
+
+.custom-input {
+    max-width: 5.2rem;
+    /* height: 1.5rem; */
+    /* font-size: 1.2rem; */
+    padding: 0.5rem 0.5rem 0.4rem 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    background-color: var(--very-light-grayish-cyan);
+    text-align: right;
+    width: auto;
+    border: 1px solid transparent;
+    font-family: var(--font-family);
+    display: none;
+
+}
+
+
+.tip-btn {
+    background-color: var(--very-dark-cyan);
+    font-family: var(--font-family);
+    color: var(--white);
+    width: fit-content;
+    padding: 0.5rem 0;
+}
+
+.tip-btn.active, .tip-btn.custom:hover {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.tip-btn:hover {
+    background-color: var(--light-cyan);
+    color: var(--very-dark-cyan);
+}
+
+
+#custom-tip {
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--grayish-cyan);
+    font-size: 1.3rem;
+}
+
+.output-section {
+    width: 18rem;
+    background-color: var(--very-dark-cyan);
+    border-radius: 1rem;
+    color: var(--white);
+    display: flex;
+    font-weight: 500;
+    flex-direction: column;
+    justify-content: space-between;
+    /* flex: 1 1 auto; */
+    padding: 2rem;
+    /* height: 100%; */
+    flex-flow: column wrap;
+    align-items: stretch;
+}
+
+.result {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    /* padding: 2rem; */
+    font-size: 0.9rem;
+}
+
+.result-div {
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; */
+}
+
+/* 
+.spacer1 {
+    flex-grow: 1;
+}
+
+.spacer2 {
+    flex-grow: 2;
+} */
+
+.result-div-tip, .result-div-person {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex: 1; */
+}
+
+.result-div-tip-head {
+    flex-grow: 1;
+}
+.result-div-person-head {
+    flex-grow: 2;
+}
+
+.result .amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--strong-cyan);
+}
+
+p {
+    margin: 0;
+}
+
+
+.result-div-tip > div > span, .result-div-person > div > span  {
+    font-size: 0.7rem;
+    color: var(--grayish-cyan);
+
+}
+
+.result_div-tip > div, .result-div-person > div  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#reset {
+    background-color: var(--strong-cyan);
+    border: none;
+    color: var(--very-dark-cyan);
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 1000;
+    /* margin: 0 1rem; */
+}
+
+#reset:hover {
+    background-color: var(--light-cyan);
+    color: var(--very-dark-cyan);
+}
+
+@media (max-width: 1024px) {
+    .calculator {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 498px) {
+
+    .container {
+        height: 100%;
+    }
+
+    .calculator {
+        width: 100%;
+        height: auto;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    header h1 {
+        margin-top: 3rem;
+    }
+
+    .input-wrapper, .input-wrapper-bill > input, .input-wrapper-people > input {
+        width: 100%;
+    }
+
+    .input-wrapper-bill, .input-wrapper-people {
+        display: flex;
+        align-items: center;
+    }
+
+    .input-section {
+        padding: 0;
+        width: 100%;
+    }
+
+    .input-section-people {
+        margin-bottom: 2rem;
+    }
+
+    .tip-btn, .custom-input {
+        flex: 1 1 40%;
+    }
+
+    .custom-input {
+        max-width: 10rem;
+        max-height: auto;
+    }
+    
+
+    .error-message {
+        /* margin-left: 7.5rem; */
+    
+    }
+    
+
+    .result .amount {
+        font-size: 2rem;
+
+    }
+
+    .result-div-person, .result-div-tip {
+        margin-bottom: 2rem;
+    }
+}
